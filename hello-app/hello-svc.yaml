@@ -1,0 +1,15 @@
+#hello-svc
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-svc
+spec:
+  ports:
+  - nodePort: 30291
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello
+  type: NodePort
